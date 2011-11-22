@@ -119,91 +119,91 @@
 
 - (void)calFishEyeWithPosition:(CGPoint)position {
     
-    float _disc;
-    float _per;
-    int count = eyeViews.count;
-    int indexTmp;
-    
-    UIImageView * _imageView;
-    UIImageView * _imageViewHide;
-    
-    for (int i = 0; i < count; ++i){
-        
-        _imageView = [eyeViews objectAtIndex:i];
-        _imageViewHide = [eyeViewsHide objectAtIndex:i];
-        
-        if (position.x > _imageViewHide.frame.origin.x && position.x <= _imageViewHide.frame.origin.x + m_Width ) {
-            indexTmp = i;
-            _per = (position.x - _imageViewHide.frame.origin.x) * m_MaxRate;
-            break;
-        }else if(i == 0){
-            if(position.x < _imageViewHide.frame.origin.x){
-                [self reSetPosition];
-                return;
-            }
-        }else if(i == count - 1){
-            if(position.x > _imageViewHide.frame.origin.x + _imageViewHide.frame.size.height){
-                [self reSetPosition];
-                return;
-            }
-        }
-    }
-    
-    if (YES) {
-        [UIView beginAnimations: @"FishEyeAnimation" context: NULL];
-        [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut];
-        [UIView setAnimationDuration: 0.3];
-    }
-    
-    
-    
-    NSLog(@"i = %d", indexTmp);
-    _imageView = [eyeViews objectAtIndex:indexTmp];
-    _imageView.frame = CGRectMake(0, position.x - _per, labelWidth, FONT_SIZE_WITH_SPACE * m_MaxRate);
-    
-    float offset = 55;
-    
-    for (int i = indexTmp - 1; i > -1; i--) {
-        _imageView = [eyeViews objectAtIndex:i];
-        if (i < indexTmp - 3) {
-           
-            _imageView.frame = CGRectMake(0, _imageViewHide[indexTmp].center.y - FONT_SIZE_WITH_SPACE * abs(i - indexTmp) - offset - FONT_SIZE_WITH_SPACE, labelWidth, FONT_SIZE_WITH_SPACE);
-        }else{
-            _disc = abs(_imageViewHide.center.y - position.x );
-            
-            _imageView.m_Disc = _disc;
-            _imageView.m_Rate = a * _imageView.m_Disc + b;
-            
-            int fontSize = FONT_SIZE_WITH_SPACE * _imageView.m_Rate;   
-
-            _imageView.frame = CGRectMake(0, alphabets[i + 1].frame.origin.x - fontSize, labelWidth, fontSize);
-        }
-        
-    }
-    for (int i = indexTmp + 1; i < count; i++) {
-        if (i > indexTmp + 3) {
-            alphabets[i].font = [UIFont boldSystemFontOfSize:FONT_SIZE_WITH_SPACE];
-            alphabets[i].frame = CGRectMake(0, _imageViewHide[indexTmp].center.y + FONT_SIZE_WITH_SPACE * abs(i - indexTmp) + offset, labelWidth, FONT_SIZE_WITH_SPACE);
-        }else{
-            _disc = abs(_imageViewHide.center.y - position.x );
-            
-            alphabets[i].m_Disc = _disc;
-            alphabets[i].m_Rate = a * alphabets[i].m_Disc + b;
-            int fontSize = FONT_SIZE_WITH_SPACE * alphabets[i].m_Rate;   
-            alphabets[i].font = [UIFont boldSystemFontOfSize:fontSize];
-            alphabets[i].frame = CGRectMake(0, alphabets[i - 1].frame.origin.x + alphabets[i - 1].frame.size.height, labelWidth, fontSize);
-        }        
-    }
-    if (YES) {
-        [UIView commitAnimations];
-    }
-    
-    if (index != indexTmp &&[selectionDelegate respondsToSelector: @selector(indexAt:withString:andpoint:)])
-    {
-        index = indexTmp;
-        NSString *  _c = [cAlphaString substringWithRange: NSMakeRange(index, 1)];
-        [selectionDelegate indexAt : index withString:_c andpoint:position];
-    }
+//    float _disc;
+//    float _per;
+//    int count = eyeViews.count;
+//    int indexTmp;
+//    
+//    UIImageView * _imageView;
+//    UIImageView * _imageViewHide;
+//    
+//    for (int i = 0; i < count; ++i){
+//        
+//        _imageView = [eyeViews objectAtIndex:i];
+//        _imageViewHide = [eyeViewsHide objectAtIndex:i];
+//        
+//        if (position.x > _imageViewHide.frame.origin.x && position.x <= _imageViewHide.frame.origin.x + m_Width ) {
+//            indexTmp = i;
+//            _per = (position.x - _imageViewHide.frame.origin.x) * m_MaxRate;
+//            break;
+//        }else if(i == 0){
+//            if(position.x < _imageViewHide.frame.origin.x){
+//                [self reSetPosition];
+//                return;
+//            }
+//        }else if(i == count - 1){
+//            if(position.x > _imageViewHide.frame.origin.x + _imageViewHide.frame.size.height){
+//                [self reSetPosition];
+//                return;
+//            }
+//        }
+//    }
+//    
+//    if (YES) {
+//        [UIView beginAnimations: @"FishEyeAnimation" context: NULL];
+//        [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut];
+//        [UIView setAnimationDuration: 0.3];
+//    }
+//    
+//    
+//    
+//    NSLog(@"i = %d", indexTmp);
+//    _imageView = [eyeViews objectAtIndex:indexTmp];
+//    _imageView.frame = CGRectMake(0, position.x - _per, labelWidth, FONT_SIZE_WITH_SPACE * m_MaxRate);
+//    
+//    float offset = 55;
+//    
+//    for (int i = indexTmp - 1; i > -1; i--) {
+//        _imageView = [eyeViews objectAtIndex:i];
+//        if (i < indexTmp - 3) {
+//           
+//            _imageView.frame = CGRectMake(0, _imageViewHide[indexTmp].center.y - FONT_SIZE_WITH_SPACE * abs(i - indexTmp) - offset - FONT_SIZE_WITH_SPACE, labelWidth, FONT_SIZE_WITH_SPACE);
+//        }else{
+//            _disc = abs(_imageViewHide.center.y - position.x );
+//            
+//            _imageView.m_Disc = _disc;
+//            _imageView.m_Rate = a * _imageView.m_Disc + b;
+//            
+//            int fontSize = FONT_SIZE_WITH_SPACE * _imageView.m_Rate;   
+//
+//            _imageView.frame = CGRectMake(0, alphabets[i + 1].frame.origin.x - fontSize, labelWidth, fontSize);
+//        }
+//        
+//    }
+//    for (int i = indexTmp + 1; i < count; i++) {
+//        if (i > indexTmp + 3) {
+//            alphabets[i].font = [UIFont boldSystemFontOfSize:FONT_SIZE_WITH_SPACE];
+//            alphabets[i].frame = CGRectMake(0, _imageViewHide[indexTmp].center.y + FONT_SIZE_WITH_SPACE * abs(i - indexTmp) + offset, labelWidth, FONT_SIZE_WITH_SPACE);
+//        }else{
+//            _disc = abs(_imageViewHide.center.y - position.x );
+//            
+//            alphabets[i].m_Disc = _disc;
+//            alphabets[i].m_Rate = a * alphabets[i].m_Disc + b;
+//            int fontSize = FONT_SIZE_WITH_SPACE * alphabets[i].m_Rate;   
+//            alphabets[i].font = [UIFont boldSystemFontOfSize:fontSize];
+//            alphabets[i].frame = CGRectMake(0, alphabets[i - 1].frame.origin.x + alphabets[i - 1].frame.size.height, labelWidth, fontSize);
+//        }        
+//    }
+//    if (YES) {
+//        [UIView commitAnimations];
+//    }
+//    
+//    if (index != indexTmp &&[selectionDelegate respondsToSelector: @selector(indexAt:withString:andpoint:)])
+//    {
+//        index = indexTmp;
+//        NSString *  _c = [cAlphaString substringWithRange: NSMakeRange(index, 1)];
+//        [selectionDelegate indexAt : index withString:_c andpoint:position];
+//    }
 }
 
 
