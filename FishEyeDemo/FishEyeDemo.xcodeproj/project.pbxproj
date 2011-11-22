@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6CE6411147B82740063AA40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CE6410147B82740063AA40 /* UIKit.framework */; };
+		B6CE6413147B82740063AA40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CE6412147B82740063AA40 /* Foundation.framework */; };
+		B6CE6415147B82740063AA40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CE6414147B82740063AA40 /* CoreGraphics.framework */; };
+		B6CE641B147B82740063AA40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6419147B82740063AA40 /* InfoPlist.strings */; };
+		B6CE641D147B82740063AA40 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CE641C147B82740063AA40 /* main.m */; };
+		B6CE6421147B82740063AA40 /* DemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CE6420147B82740063AA40 /* DemoAppDelegate.m */; };
+		B6CE642A147B82810063AA40 /* FishEyeView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CE6429147B82810063AA40 /* FishEyeView.m */; };
+		B6CE642E147B82B30063AA40 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6CE642C147B82B30063AA40 /* MyViewController.m */; };
+		B6CE642F147B82B30063AA40 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6CE642D147B82B30063AA40 /* MyViewController.xib */; };
+		B6CE6432147B83910063AA40 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6431147B83910063AA40 /* bg.jpg */; };
+		B6CE6450147B94360063AA40 /* eye_item_0.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6437147B94360063AA40 /* eye_item_0.png */; };
+		B6CE6451147B94360063AA40 /* eye_item_1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6438147B94360063AA40 /* eye_item_1.png */; };
+		B6CE6452147B94360063AA40 /* eye_item_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6439147B94360063AA40 /* eye_item_2.png */; };
+		B6CE6453147B94360063AA40 /* eye_item_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE643A147B94360063AA40 /* eye_item_3.png */; };
+		B6CE6454147B94360063AA40 /* eye_item_4.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE643B147B94360063AA40 /* eye_item_4.png */; };
+		B6CE6455147B94360063AA40 /* eye_item_5.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE643C147B94360063AA40 /* eye_item_5.png */; };
+		B6CE6456147B94360063AA40 /* eye_item_6.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE643D147B94360063AA40 /* eye_item_6.png */; };
+		B6CE6457147B94360063AA40 /* eye_item_7.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE643E147B94360063AA40 /* eye_item_7.png */; };
+		B6CE6458147B94360063AA40 /* eye_item_8.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE643F147B94360063AA40 /* eye_item_8.png */; };
+		B6CE6459147B94360063AA40 /* eye_item_9.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6440147B94360063AA40 /* eye_item_9.png */; };
+		B6CE645A147B94360063AA40 /* eye_item_10.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6441147B94360063AA40 /* eye_item_10.png */; };
+		B6CE645B147B94360063AA40 /* eye_item_11.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6442147B94360063AA40 /* eye_item_11.png */; };
+		B6CE645C147B94360063AA40 /* eye_item_12.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6443147B94360063AA40 /* eye_item_12.png */; };
+		B6CE645D147B94360063AA40 /* eye_item_13.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6444147B94360063AA40 /* eye_item_13.png */; };
+		B6CE645E147B94360063AA40 /* eye_item_14.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6445147B94360063AA40 /* eye_item_14.png */; };
+		B6CE645F147B94360063AA40 /* eye_item_15.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6446147B94360063AA40 /* eye_item_15.png */; };
+		B6CE6460147B94360063AA40 /* eye_item_16.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6447147B94360063AA40 /* eye_item_16.png */; };
+		B6CE6461147B94360063AA40 /* eye_item_17.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6448147B94360063AA40 /* eye_item_17.png */; };
+		B6CE6462147B94360063AA40 /* eye_item_18.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE6449147B94360063AA40 /* eye_item_18.png */; };
+		B6CE6463147B94360063AA40 /* eye_item_19.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE644A147B94360063AA40 /* eye_item_19.png */; };
+		B6CE6464147B94360063AA40 /* eye_item_20.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE644B147B94360063AA40 /* eye_item_20.png */; };
+		B6CE6465147B94360063AA40 /* eye_item_21.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE644C147B94360063AA40 /* eye_item_21.png */; };
+		B6CE6466147B94360063AA40 /* eye_item_22.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE644D147B94360063AA40 /* eye_item_22.png */; };
+		B6CE6467147B94360063AA40 /* eye_item_23.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE644E147B94360063AA40 /* eye_item_23.png */; };
+		B6CE6468147B94360063AA40 /* eye_item_24.png in Resources */ = {isa = PBXBuildFile; fileRef = B6CE644F147B94360063AA40 /* eye_item_24.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B6CE640C147B82740063AA40 /* FishEyeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishEyeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6CE6410147B82740063AA40 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B6CE6412147B82740063AA40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6CE6414147B82740063AA40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B6CE6418147B82740063AA40 /* FishEyeDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FishEyeDemo-Info.plist"; sourceTree = "<group>"; };
+		B6CE641A147B82740063AA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6CE641C147B82740063AA40 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B6CE641E147B82740063AA40 /* FishEyeDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FishEyeDemo-Prefix.pch"; sourceTree = "<group>"; };
+		B6CE641F147B82740063AA40 /* DemoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoAppDelegate.h; sourceTree = "<group>"; };
+		B6CE6420147B82740063AA40 /* DemoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoAppDelegate.m; sourceTree = "<group>"; };
+		B6CE6428147B82810063AA40 /* FishEyeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FishEyeView.h; sourceTree = "<group>"; };
+		B6CE6429147B82810063AA40 /* FishEyeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FishEyeView.m; sourceTree = "<group>"; };
+		B6CE642B147B82B30063AA40 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		B6CE642C147B82B30063AA40 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		B6CE642D147B82B30063AA40 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		B6CE6431147B83910063AA40 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		B6CE6437147B94360063AA40 /* eye_item_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_0.png; sourceTree = "<group>"; };
+		B6CE6438147B94360063AA40 /* eye_item_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_1.png; sourceTree = "<group>"; };
+		B6CE6439147B94360063AA40 /* eye_item_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_2.png; sourceTree = "<group>"; };
+		B6CE643A147B94360063AA40 /* eye_item_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_3.png; sourceTree = "<group>"; };
+		B6CE643B147B94360063AA40 /* eye_item_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_4.png; sourceTree = "<group>"; };
+		B6CE643C147B94360063AA40 /* eye_item_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_5.png; sourceTree = "<group>"; };
+		B6CE643D147B94360063AA40 /* eye_item_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_6.png; sourceTree = "<group>"; };
+		B6CE643E147B94360063AA40 /* eye_item_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_7.png; sourceTree = "<group>"; };
+		B6CE643F147B94360063AA40 /* eye_item_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_8.png; sourceTree = "<group>"; };
+		B6CE6440147B94360063AA40 /* eye_item_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_9.png; sourceTree = "<group>"; };
+		B6CE6441147B94360063AA40 /* eye_item_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_10.png; sourceTree = "<group>"; };
+		B6CE6442147B94360063AA40 /* eye_item_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_11.png; sourceTree = "<group>"; };
+		B6CE6443147B94360063AA40 /* eye_item_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_12.png; sourceTree = "<group>"; };
+		B6CE6444147B94360063AA40 /* eye_item_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_13.png; sourceTree = "<group>"; };
+		B6CE6445147B94360063AA40 /* eye_item_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_14.png; sourceTree = "<group>"; };
+		B6CE6446147B94360063AA40 /* eye_item_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_15.png; sourceTree = "<group>"; };
+		B6CE6447147B94360063AA40 /* eye_item_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_16.png; sourceTree = "<group>"; };
+		B6CE6448147B94360063AA40 /* eye_item_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_17.png; sourceTree = "<group>"; };
+		B6CE6449147B94360063AA40 /* eye_item_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_18.png; sourceTree = "<group>"; };
+		B6CE644A147B94360063AA40 /* eye_item_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_19.png; sourceTree = "<group>"; };
+		B6CE644B147B94360063AA40 /* eye_item_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_20.png; sourceTree = "<group>"; };
+		B6CE644C147B94360063AA40 /* eye_item_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_21.png; sourceTree = "<group>"; };
+		B6CE644D147B94360063AA40 /* eye_item_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_22.png; sourceTree = "<group>"; };
+		B6CE644E147B94360063AA40 /* eye_item_23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_23.png; sourceTree = "<group>"; };
+		B6CE644F147B94360063AA40 /* eye_item_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye_item_24.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6CE6409147B82740063AA40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6CE6411147B82740063AA40 /* UIKit.framework in Frameworks */,
+				B6CE6413147B82740063AA40 /* Foundation.framework in Frameworks */,
+				B6CE6415147B82740063AA40 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6CE6401147B82730063AA40 = {
+			isa = PBXGroup;
+			children = (
+				B6CE6427147B82810063AA40 /* FishEye */,
+				B6CE6416147B82740063AA40 /* FishEyeDemo */,
+				B6CE640F147B82740063AA40 /* Frameworks */,
+				B6CE640D147B82740063AA40 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6CE640D147B82740063AA40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE640C147B82740063AA40 /* FishEyeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6CE640F147B82740063AA40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE6410147B82740063AA40 /* UIKit.framework */,
+				B6CE6412147B82740063AA40 /* Foundation.framework */,
+				B6CE6414147B82740063AA40 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6CE6416147B82740063AA40 /* FishEyeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE6430147B83910063AA40 /* Resources */,
+				B6CE641F147B82740063AA40 /* DemoAppDelegate.h */,
+				B6CE6420147B82740063AA40 /* DemoAppDelegate.m */,
+				B6CE642B147B82B30063AA40 /* MyViewController.h */,
+				B6CE642C147B82B30063AA40 /* MyViewController.m */,
+				B6CE642D147B82B30063AA40 /* MyViewController.xib */,
+				B6CE6417147B82740063AA40 /* Supporting Files */,
+			);
+			path = FishEyeDemo;
+			sourceTree = "<group>";
+		};
+		B6CE6417147B82740063AA40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE6418147B82740063AA40 /* FishEyeDemo-Info.plist */,
+				B6CE6419147B82740063AA40 /* InfoPlist.strings */,
+				B6CE641C147B82740063AA40 /* main.m */,
+				B6CE641E147B82740063AA40 /* FishEyeDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6CE6427147B82810063AA40 /* FishEye */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE6428147B82810063AA40 /* FishEyeView.h */,
+				B6CE6429147B82810063AA40 /* FishEyeView.m */,
+			);
+			name = FishEye;
+			path = ../FishEye;
+			sourceTree = "<group>";
+		};
+		B6CE6430147B83910063AA40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE6437147B94360063AA40 /* eye_item_0.png */,
+				B6CE6438147B94360063AA40 /* eye_item_1.png */,
+				B6CE6439147B94360063AA40 /* eye_item_2.png */,
+				B6CE643A147B94360063AA40 /* eye_item_3.png */,
+				B6CE643B147B94360063AA40 /* eye_item_4.png */,
+				B6CE643C147B94360063AA40 /* eye_item_5.png */,
+				B6CE643D147B94360063AA40 /* eye_item_6.png */,
+				B6CE643E147B94360063AA40 /* eye_item_7.png */,
+				B6CE643F147B94360063AA40 /* eye_item_8.png */,
+				B6CE6440147B94360063AA40 /* eye_item_9.png */,
+				B6CE6441147B94360063AA40 /* eye_item_10.png */,
+				B6CE6442147B94360063AA40 /* eye_item_11.png */,
+				B6CE6443147B94360063AA40 /* eye_item_12.png */,
+				B6CE6444147B94360063AA40 /* eye_item_13.png */,
+				B6CE6445147B94360063AA40 /* eye_item_14.png */,
+				B6CE6446147B94360063AA40 /* eye_item_15.png */,
+				B6CE6447147B94360063AA40 /* eye_item_16.png */,
+				B6CE6448147B94360063AA40 /* eye_item_17.png */,
+				B6CE6449147B94360063AA40 /* eye_item_18.png */,
+				B6CE644A147B94360063AA40 /* eye_item_19.png */,
+				B6CE644B147B94360063AA40 /* eye_item_20.png */,
+				B6CE644C147B94360063AA40 /* eye_item_21.png */,
+				B6CE644D147B94360063AA40 /* eye_item_22.png */,
+				B6CE644E147B94360063AA40 /* eye_item_23.png */,
+				B6CE644F147B94360063AA40 /* eye_item_24.png */,
+				B6CE6431147B83910063AA40 /* bg.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6CE640B147B82740063AA40 /* FishEyeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6CE6424147B82740063AA40 /* Build configuration list for PBXNativeTarget "FishEyeDemo" */;
+			buildPhases = (
+				B6CE6408147B82740063AA40 /* Sources */,
+				B6CE6409147B82740063AA40 /* Frameworks */,
+				B6CE640A147B82740063AA40 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FishEyeDemo;
+			productName = FishEyeDemo;
+			productReference = B6CE640C147B82740063AA40 /* FishEyeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6CE6403147B82730063AA40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = 13awan;
+			};
+			buildConfigurationList = B6CE6406147B82730063AA40 /* Build configuration list for PBXProject "FishEyeDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B6CE6401147B82730063AA40;
+			productRefGroup = B6CE640D147B82740063AA40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6CE640B147B82740063AA40 /* FishEyeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6CE640A147B82740063AA40 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6CE641B147B82740063AA40 /* InfoPlist.strings in Resources */,
+				B6CE642F147B82B30063AA40 /* MyViewController.xib in Resources */,
+				B6CE6432147B83910063AA40 /* bg.jpg in Resources */,
+				B6CE6450147B94360063AA40 /* eye_item_0.png in Resources */,
+				B6CE6451147B94360063AA40 /* eye_item_1.png in Resources */,
+				B6CE6452147B94360063AA40 /* eye_item_2.png in Resources */,
+				B6CE6453147B94360063AA40 /* eye_item_3.png in Resources */,
+				B6CE6454147B94360063AA40 /* eye_item_4.png in Resources */,
+				B6CE6455147B94360063AA40 /* eye_item_5.png in Resources */,
+				B6CE6456147B94360063AA40 /* eye_item_6.png in Resources */,
+				B6CE6457147B94360063AA40 /* eye_item_7.png in Resources */,
+				B6CE6458147B94360063AA40 /* eye_item_8.png in Resources */,
+				B6CE6459147B94360063AA40 /* eye_item_9.png in Resources */,
+				B6CE645A147B94360063AA40 /* eye_item_10.png in Resources */,
+				B6CE645B147B94360063AA40 /* eye_item_11.png in Resources */,
+				B6CE645C147B94360063AA40 /* eye_item_12.png in Resources */,
+				B6CE645D147B94360063AA40 /* eye_item_13.png in Resources */,
+				B6CE645E147B94360063AA40 /* eye_item_14.png in Resources */,
+				B6CE645F147B94360063AA40 /* eye_item_15.png in Resources */,
+				B6CE6460147B94360063AA40 /* eye_item_16.png in Resources */,
+				B6CE6461147B94360063AA40 /* eye_item_17.png in Resources */,
+				B6CE6462147B94360063AA40 /* eye_item_18.png in Resources */,
+				B6CE6463147B94360063AA40 /* eye_item_19.png in Resources */,
+				B6CE6464147B94360063AA40 /* eye_item_20.png in Resources */,
+				B6CE6465147B94360063AA40 /* eye_item_21.png in Resources */,
+				B6CE6466147B94360063AA40 /* eye_item_22.png in Resources */,
+				B6CE6467147B94360063AA40 /* eye_item_23.png in Resources */,
+				B6CE6468147B94360063AA40 /* eye_item_24.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6CE6408147B82740063AA40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6CE641D147B82740063AA40 /* main.m in Sources */,
+				B6CE6421147B82740063AA40 /* DemoAppDelegate.m in Sources */,
+				B6CE642A147B82810063AA40 /* FishEyeView.m in Sources */,
+				B6CE642E147B82B30063AA40 /* MyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6CE6419147B82740063AA40 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6CE641A147B82740063AA40 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6CE6422147B82740063AA40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		B6CE6423147B82740063AA40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6CE6425147B82740063AA40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FishEyeDemo/FishEyeDemo-Prefix.pch";
+				INFOPLIST_FILE = "FishEyeDemo/FishEyeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B6CE6426147B82740063AA40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FishEyeDemo/FishEyeDemo-Prefix.pch";
+				INFOPLIST_FILE = "FishEyeDemo/FishEyeDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6CE6406147B82730063AA40 /* Build configuration list for PBXProject "FishEyeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6CE6422147B82740063AA40 /* Debug */,
+				B6CE6423147B82740063AA40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6CE6424147B82740063AA40 /* Build configuration list for PBXNativeTarget "FishEyeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6CE6425147B82740063AA40 /* Debug */,
+				B6CE6426147B82740063AA40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6CE6403147B82730063AA40 /* Project object */;
+}
