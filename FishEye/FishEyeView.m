@@ -21,20 +21,22 @@
 - (void)resetPosition{
     
     float viewH = m_Height * EYE_COUNT;
-    startY = (self.frame.size.height - viewH) / 2;
+    m_StartY = (self.frame.size.height - viewH) / 2;
     
     [UIView beginAnimations: @"FishEyeAnimation" context: NULL];
     [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationDuration: 0.3];
+    [UIView setAnimationDuration: 0.5];
     
     for (int i = 0; i < EYE_COUNT; ++i){
 
-        alphabets[i].frame = CGRectMake(0, startY + i * m_Height, labelWidth, m_Height);
+        alphabets[i].frame = CGRectMake(0, m_StartY + i * m_Height, labelWidth, m_Height);
         
-        alphabets2[i].frame = CGRectMake(0, startY + i * m_Height, labelWidth, m_Height);
+        alphabets2[i].frame = CGRectMake(0, m_StartY + i * m_Height, labelWidth, m_Height);
     }
     
     [UIView commitAnimations];
+    
+    indexTmp = -1;
 }
 
 @end
@@ -42,6 +44,7 @@
 
 @implementation FishEyeView
 
+@synthesize selectionDelegate;
 
 - (void)dealloc{
     
@@ -88,22 +91,23 @@
     }
     m_Width = _minSize.width;
     m_Height = _minSize.height;
-    
-    
-    m_MaxDisc = 110.0f;
+        
+    m_MaxDisc = m_Width * 3.5;
     m_MinRate = 1.0f;
     m_MinDisc = m_Width / 2;
-    m_MaxRate = 3.0f;
+    m_MaxRate = _maxRate;
     
+    m_A = (m_MinRate - m_MaxRate)/(m_MaxDisc - m_MinDisc);
+    m_B = m_MinRate - m_A * m_MaxDisc;
     
-    a = (m_MinRate - m_MaxRate)/(m_MaxDisc - m_MinDisc);
-    b = m_MinRate - a * m_MaxDisc;
+    m_Offset = ((m_A * m_Width * 0.5 + m_B) + (m_A * 1.5 * m_Width + m_B)  + (m_A * 2.5 * m_Width + m_B) + (m_A * 3.5 * m_Width + m_B)  - 4.5)  * m_Width;
     
     [self resetPosition];
     
 }
 
-- (void)calFishEyeWithPosition:(CGPoint)position {
+- (void)calFishEyeWithPosition:(CGPoint)position 
+                  withAnimated:(BOOL)animated{
     
     float _disc;
     float _per;
@@ -127,51 +131,45 @@
         }
     }
     
-    if (YES) {
+    if (animated) {
         [UIView beginAnimations: @"FishEyeAnimation" context: NULL];
         [UIView setAnimationCurve: UIViewAnimationCurveEaseInOut];
         [UIView setAnimationDuration: 0.3];
     }
     
-    
-    
-    NSLog(@"i = %d", indexTmp);
-    
+        
     alphabets[indexTmp].frame = CGRectMake(0, position.y - _per, m_Width * m_MaxRate, m_Height * m_MaxRate);
-    
-    float offset = 110;
-    
+        
     for (int i = indexTmp - 1; i > -1; i--) {
         if (i < indexTmp - 3) {
-            alphabets[i].frame = CGRectMake(0, alphabets2[indexTmp].center.y - m_Height * abs(i - indexTmp) - offset - m_Height, m_Width, m_Height);
+            alphabets[i].frame = CGRectMake(0, alphabets2[indexTmp].center.y - m_Height * abs(i - indexTmp) - m_Offset - m_Height, m_Width, m_Height);
         }else{
             _disc = abs(alphabets2[i].center.y - position.y );
             
-            _rate = a * _disc + b;
+            _rate = m_A * _disc + m_B;
             alphabets[i].frame = CGRectMake(0, alphabets[i + 1].frame.origin.y - m_Height * _rate, m_Width * _rate, m_Height * _rate);
         }
         
     }
     for (int i = indexTmp + 1; i < EYE_COUNT; i++) {
         if (i > indexTmp + 3) {
-            alphabets[i].frame = CGRectMake(0, alphabets2[indexTmp].center.y + m_Width * abs(i - indexTmp) + offset, m_Width, m_Height);
+            alphabets[i].frame = CGRectMake(0, alphabets2[indexTmp].center.y + m_Height * abs(i - indexTmp) + m_Offset, m_Width, m_Height);
         }else{
             _disc = abs(alphabets2[i].center.y - position.y );
                         
-            _rate = a * _disc + b;  
+            _rate = m_A * _disc + m_B;  
             alphabets[i].frame = CGRectMake(0, alphabets[i - 1].frame.origin.y + alphabets[i - 1].frame.size.height, m_Width * _rate, m_Height * _rate);
         }        
     }
-    if (YES) {
+    if (animated) {
         [UIView commitAnimations];
     }
-//    
-//    if (index != indexTmp &&[selectionDelegate respondsToSelector: @selector(indexAt:withString:andpoint:)])
-//    {
-//        index = indexTmp;
-//        NSString *  _c = [cAlphaString substringWithRange: NSMakeRange(index, 1)];
-//        [selectionDelegate indexAt : index withString:_c andpoint:position];
-//    }
+    
+    if (index != indexTmp && selectionDelegate && [selectionDelegate respondsToSelector: @selector(indexAt:)])
+    {
+        index = indexTmp;
+        [selectionDelegate indexAt : index];
+    }
 
 }
 
@@ -184,7 +182,8 @@
     
     CGPoint lastPoint = [_touch locationInView: self];
     
-    [self calFishEyeWithPosition:lastPoint];
+    [self calFishEyeWithPosition:lastPoint 
+                    withAnimated:YES];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
@@ -208,7 +207,8 @@
     
     CGPoint lastPoint = [_touch locationInView: self];   
     
-    [self calFishEyeWithPosition:lastPoint];
+    [self calFishEyeWithPosition:lastPoint 
+                    withAnimated:NO];
 }
 
 

@@ -10,16 +10,14 @@
 
 #define EYE_COUNT 24
 
-//@interface VVImageView : UIImageView {
-//    float m_Rate;//缩放比例
-//    float m_Disc;//中心到鼠标的距离
-//}
-//@property(nonatomic) float m_Rate;
-//@property(nonatomic) float m_Disc;
-//@end
+
+
+@protocol selectDelegate;
 
 
 @interface FishEyeView : UIView{
+    
+    id <selectDelegate> selectionDelegate;
     
     UIImageView * alphabets[EYE_COUNT];
     UIImageView * alphabets2[EYE_COUNT];
@@ -36,19 +34,25 @@
     //图标初始大小
     float m_Width;
     float m_Height;
-    float a;
-    float b;
+    float m_A;
+    float m_B;
+    float m_Offset;
     
-    float startY;
-    
-    float labelWidth;
+    float m_StartY;
     
 
 }
+@property (nonatomic, assign)id <selectDelegate> selectionDelegate;
 
 - (void) initializeWithNames:(NSMutableArray *)_nameArray 
                  withMinSize:(CGSize)_minSize
                  withMaxRate:(float)_maxRate
              withActionCount:(int)_actionCount;
+
+@end
+
+@protocol selectDelegate <NSObject>
+
+- (void)indexAt:(NSInteger)index;
 
 @end
