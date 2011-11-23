@@ -398,6 +398,7 @@
 				B6CE6426147B82740063AA40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
