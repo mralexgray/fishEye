@@ -29,9 +29,9 @@
     
     for (int i = 0; i < EYE_COUNT; ++i){
 
-        alphabets[i].frame = CGRectMake(0, m_StartY + i * m_Height, labelWidth, m_Height);
+        alphabets[i].frame = CGRectMake(0, m_StartY + i * m_Height, m_Width, m_Height);
         
-        alphabets2[i].frame = CGRectMake(0, m_StartY + i * m_Height, labelWidth, m_Height);
+        alphabets2[i].frame = CGRectMake(0, m_StartY + i * m_Height, m_Width, m_Height);
     }
     
     [UIView commitAnimations];
