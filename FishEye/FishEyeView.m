@@ -36,7 +36,6 @@
     
     [UIView commitAnimations];
     
-    indexTmp = -1;
 }
 
 @end
@@ -44,7 +43,7 @@
 
 @implementation FishEyeView
 
-@synthesize selectionDelegate;
+@synthesize indexDelegate;
 
 - (void)dealloc{
     
@@ -82,13 +81,12 @@
         alphabets2[i] = [[UIImageView alloc] initWithFrame:CGRectZero];
         [self addSubview: alphabets2[i]];
         
-        
         alphabets[i] = [[UIImageView alloc] initWithFrame:CGRectZero];
         alphabets[i].contentMode = UIViewContentModeScaleAspectFill;
         alphabets[i].image = [UIImage imageNamed:[NSString stringWithFormat:@"eye_item_%d.png", i]];
         [self addSubview: alphabets[i]];
-        
     }
+    
     m_Width = _minSize.width;
     m_Height = _minSize.height;
         
@@ -112,6 +110,8 @@
     float _disc;
     float _per;
     float _rate;
+    
+    NSUInteger indexTmp;
     
     for (int i = 0; i < EYE_COUNT; ++i){
         if (position.y > alphabets2[i].frame.origin.y && position.y <= alphabets2[i].frame.origin.y + m_Height ) {
@@ -165,10 +165,10 @@
         [UIView commitAnimations];
     }
     
-    if (index != indexTmp && selectionDelegate && [selectionDelegate respondsToSelector: @selector(indexAt:)])
+    if (index != indexTmp && indexDelegate && [indexDelegate respondsToSelector: @selector(fishEyeIndex:)])
     {
         index = indexTmp;
-        [selectionDelegate indexAt : index];
+        [indexDelegate fishEyeIndex : index];
     }
 
 }
@@ -180,9 +180,9 @@
 
     UITouch * _touch = [touches anyObject];
     
-    CGPoint lastPoint = [_touch locationInView: self];
+    CGPoint touchPoint = [_touch locationInView: self];
     
-    [self calFishEyeWithPosition:lastPoint 
+    [self calFishEyeWithPosition:touchPoint 
                     withAnimated:YES];
 }
 
@@ -193,11 +193,6 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-        
-//    if ([selectionDelegate respondsToSelector: @selector(endMove)])
-//    {
-//        [selectionDelegate endMove];
-//    }
     [self resetPosition];
 }
 
@@ -205,9 +200,9 @@
 {
     UITouch * _touch = [touches anyObject];
     
-    CGPoint lastPoint = [_touch locationInView: self];   
+    CGPoint touchPoint = [_touch locationInView: self];   
     
-    [self calFishEyeWithPosition:lastPoint 
+    [self calFishEyeWithPosition:touchPoint 
                     withAnimated:NO];
 }
 

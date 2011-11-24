@@ -12,18 +12,18 @@
 
 
 
-@protocol selectDelegate;
+@protocol FishEyeIndexDelegate;
 
 
 @interface FishEyeView : UIView{
     
-    id <selectDelegate> selectionDelegate;
+    id <FishEyeIndexDelegate> indexDelegate;
     
     UIImageView * alphabets[EYE_COUNT];
     UIImageView * alphabets2[EYE_COUNT];
 
-    int index;
-    int indexTmp;
+    NSUInteger index;
+
     //----------
     //鼠标最大响应距离，最小响应距离
     float m_MaxDisc;
@@ -37,12 +37,14 @@
     float m_A;
     float m_B;
     float m_Offset;
-    
+    //horizontal or vertical
+    BOOL horizontal;
     float m_StartY;
+    float m_StartX;
     
 
 }
-@property (nonatomic, assign)id <selectDelegate> selectionDelegate;
+@property (nonatomic, assign)id <FishEyeIndexDelegate> indexDelegate;
 
 - (void) initializeWithNames:(NSMutableArray *)_nameArray 
                  withMinSize:(CGSize)_minSize
@@ -51,8 +53,8 @@
 
 @end
 
-@protocol selectDelegate <NSObject>
+@protocol FishEyeIndexDelegate <NSObject>
 
-- (void)indexAt:(NSInteger)index;
+- (void)fishEyeIndex:(NSUInteger)index;
 
 @end

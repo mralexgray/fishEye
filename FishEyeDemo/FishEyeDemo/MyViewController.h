@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FishEyeView.h"
 
-@interface MyViewController : UIViewController<selectDelegate>{
+@interface MyViewController : UIViewController<FishEyeIndexDelegate>{
     
 }
 @property (nonatomic, retain) IBOutlet FishEyeView * fishEyeView;

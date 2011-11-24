@@ -48,7 +48,7 @@
     }
     CGSize minSize = CGSizeMake(30, 30);
     
-    fishEyeView.selectionDelegate = self;
+    fishEyeView.indexDelegate = self;
     [fishEyeView initializeWithNames:nameArray 
                          withMinSize:minSize 
                          withMaxRate:3.0f 
@@ -67,7 +67,7 @@
     // Return YES for supported orientations
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-- (void)indexAt:(NSInteger)index{
+- (void)fishEyeIndex:(NSUInteger)index{
     
     NSLog(@"index = %d", index);
 }
